@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .id{
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="form">
+
+    <form action="/detelesucces" method="POST">
+      <fieldset>
+      <div class="id">
+          <label>Id</label>
+        <input name="userID" value="<%=UserEdit.id%>"></input>
+      </div>
+        <legend>Are you Sure:</legend>
+        <label>Email</label><input name="email" value="<%=UserEdit.Email%>"></input>
+        
+          <button>ok</button>
+       
+
+       </fieldset>
+    </form>
+  </div>
+</body>
+</html>

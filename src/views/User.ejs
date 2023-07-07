@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link type="text/css" rel="stylesheet" href="../public/css/styles.css" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .img {
+        width: 400px;
+        height: 40px;
+      }
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #333;
+      }
+
+      li {
+        float: left;
+      }
+
+      li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+
+      li a:hover:not(.active) {
+        background-color: #111;
+      }
+
+      .active {
+        background-color: #04aa6d;
+      }
+      .form {
+        width: 500px;
+        margin: 0 auto;
+      }
+      .input-group {
+        padding: 10px;
+      }
+      .Btn-Save {
+        margin: 10px;
+      }
+      table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+      td,
+      th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+      }
+      tr:hover {
+        background-color: #cac8c8;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <ul>
+        <li><a href="/home">Home</a></li>
+        <li><a href="/User" class="active">Users</a></li>
+      </ul>
+    </div>
+    <table>
+      <tr>
+        <th>ID</th>
+        <th>Email</th>
+        <th>Lastname</th>
+        <th>Fristname</th>
+        <th>Address</th>
+        <th>City</th>
+        <th>Action</th>
+      </tr>
+      <% listUsers.forEach(function(listUsers,index) { %>
+      <tr>
+        <td><%=listUsers.id %></td>
+        <td><%=listUsers.Email %></td>
+        <td><%=listUsers.LName %></td>
+        <td><%=listUsers.FName %></td>
+        <td><%=listUsers.Address %></td>
+        <td><%=listUsers.City %></td>
+        <td>
+          <a href="/User/<%=listUsers.id %>">Edit</a>
+          <form action="/delete/<%=listUsers.id %>" method="POST">
+            <button>Delete</button>
+          </form>
+        </td>
+      </tr>
+      <% }); %>
+    </table>
+  </body>
+</html>
